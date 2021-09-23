@@ -15,6 +15,7 @@ class vehiculosTest {
 		moto1.cambiarChofer(new Persona ("Ernesto"));
 		moto1.agregarAcompaniante(new Persona ("Carlos"));
 		moto1.getAcompaniante();
+		moto1.cambiarChofer(new Persona ("Jose"));
 		assertEquals ("Ernesto", moto1.getChofer ());
 	}
 

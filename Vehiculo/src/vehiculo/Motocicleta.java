@@ -31,13 +31,16 @@ public class Motocicleta extends Vehiculo {
 
 	@Override
 	public void cambiarChofer(Persona chofer) {
-		if (this.getAcompaniante() == null) {
-			this.setChofer(chofer);
+		try {
+			if (this.getAcompaniante() == null) {
+				this.setChofer(chofer);
+			}
+			else {
+				throw new Error("No se puede cambiar de chofer, hay un acompañiante");
+			}
+		} catch (Error e) {
+			System.out.println("No se puede cambiar de chofer, hay un acompañiante");
 		}
-		else {
-			throw new Error("No se puede cambiar de chofer, hay un acompañiante");
-		}
-
 	}
 	public static void main(String[] args) {
 		Motocicleta moto1 = new Motocicleta (new Persona ("Jorge"));

@@ -2,7 +2,6 @@ package vehiculo;
 
 public class Autobus extends Vehiculo {
 	public Persona listaPasajeros[] = new Persona[20];
-	private Persona pasajero;
 	private int cantidadPasajeros;
 
 	public Autobus(Persona chofer) {
@@ -26,11 +25,15 @@ public class Autobus extends Vehiculo {
 
 	@Override
 	public void cambiarChofer(Persona chofer) {
-		if (this.cantidadPasajeros == 0) {
-			this.setChofer(chofer);
+		try {
+			if (this.cantidadPasajeros == 0) {
+				this.setChofer(chofer);
+			} else {
+				throw new Error("No se puede cambiar de chofer, hay pasajeros");
+			}
+		} catch (Error e) {
+			System.out.println("No se puede cambiar de chofer, hay pasajeros");
 		}
-		throw new Error("No se puede cambiar de chofer, hay pasajeros");
-
 	}
 
 	public static void main(String[] args) {
@@ -46,8 +49,7 @@ public class Autobus extends Vehiculo {
 		auto1.agregarPasajero(pasajero4);
 		System.out.println(auto1.getCantidadPasajeros());
 		System.out.println(auto1.getListaPasajeros()[2].getNombre());
-		auto1.cambiarChofer(new Persona ("Sebas"));
-
+		auto1.cambiarChofer(new Persona("Sebas"));
 
 	}
 }

@@ -13,7 +13,12 @@ public abstract class Vehiculo {
 	public abstract void cambiarChofer(Persona chofer);
 
 	protected void setChofer(Persona chofer) {
-		this.chofer = chofer;
+		try {
+			this.chofer = chofer;
+		}catch (Exception e) {
+			System.out.println("Ya existe un chofer");
+			
+		}
 	}
 	public String getChofer() {
 		return this.chofer.getNombre();
