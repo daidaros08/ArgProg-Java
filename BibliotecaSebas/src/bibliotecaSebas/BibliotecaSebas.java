@@ -25,7 +25,7 @@ public class BibliotecaSebas implements Cloneable {
 		Collections.sort(this.libros, new OrdenadorTitulo());
 	}
 	public void ordenarLibrosPorPaginas() {
-		Collections.sort(this.libros, new OrdenadorPaginas());
+		Collections.sort(this.libros, Collections.reverseOrder(new OrdenadorPaginas()));
 	}
 	public void ordenarLibrosPorTituloNormalizado(){
 		Collections.sort(this.libros, new OrdenadorTituloNormalizado());
