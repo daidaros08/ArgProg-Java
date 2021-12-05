@@ -32,8 +32,13 @@ class FizzBuzz {
 	 */
 
 	public static void main(String[] args) {
-
-		FizzBuzz.hacerFizzBuzz();
+		int a=1;
+		while (a<=10) {
+			System.out.println(a);
+			a++;
+		}
+		
+		//FizzBuzz.hacerFizzBuzz();
 
 	}
 
